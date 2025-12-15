@@ -14,6 +14,12 @@ if __name__ == "__main__":
     
     choice = input("Enter add or sub or mul or div: ")
     print('-------------------------------------')
+    
+    add = add.lower()
+    sub = sub.lower()
+    mul = mul.lower()
+    div = div.lower()
+    
     if (choice == 'add'):
         result = num1 + num2
         #return result
