@@ -1,41 +1,50 @@
 # Simple Calculator App
 
-def addNum(a,b):
-    result = a+b
-    return result
+def addition(a, b):
+    return a + b
+
+def subtraction(a, b):
+    return a - b
+    
+def multiply(a, b):
+    return a * b
+
+def divide(a, b):
+    return a / b
+
 
 if __name__ == "__main__":
-    print("Calculator App")
+    print("calculator app")
+    print('\n')
+    print()
     
-    print("\n")
+    num1 = int(input('Enter first number: '))
+    num2 = int(input("Enter second number: "))
     
-    num1 = int(input("Enter the first number: "))
-    num2 = int(input("Enter the second number: "))
+    choice = input("Enter your choice - add, sub, mul, div: ")
+    print('-------------------------------------------------')
+    add = 'add'.lower()
+    sub = 'sub'.lower()
+    mul = 'mul'.lower()
+    div = 'div'.lower()
     
-    choice = input("Enter add or sub or mul or div: ")
-    print('-------------------------------------')
     
-    add = add.lower()
-    sub = sub.lower()
-    mul = mul.lower()
-    div = div.lower()
-    
-    if (choice == 'add'):
-        result = num1 + num2
-        #return result
-        print(f"The sum of {num1} and {num2} is {result}")
-    elif (choice == 'sub'):
-        result = num1 - num2
-        print(f"The result of {num1} and {num2} is {result}")
-    elif (choice == 'mul'):
-        result = num1 * num2
-        print(f"The product of {num1} and {num2} is {result}")
+    if choice == 'add':
+        print(f" The sum of {num1} & {num2} is {addition(num1,num2)}")
+        
+    elif choice == 'sub':
+        print(f" The result of {num1} & {num2} is {subtraction(num1, num2)}")
+        
+    elif choice == 'mul':
+        print(f" The product of {num1} & {num2} is {multiply(num1, num2)}")
+        
     elif choice == 'div':
-        if num2 != 0:
-            result = num1 / num2
-        else:
-            print("zero division error")
-        print(f"The quotient of {num1} and {num2} is {result}")
+        try:
+            if num2 != 0:
+            print(f"The quotient of {num1} and {num2} is {divide(num1,num2}")    
+        except ZeroDivisionError:
+                print("zero division error")
+
     else: 
         print('Invalid input')
         
